@@ -1,0 +1,71 @@
+// Secuencia de 6 LED con potenciómetro
+// Arduino UNO R3
+
+int verde = 2;
+int amarillo = 3;
+int naranja = 4;
+int azul = 5;
+int rojo = 6;
+int blanco = 7;
+
+int potenciometro = A0;
+
+int valorPotenciometro;
+int tiempo;
+
+void setup() {
+
+  pinMode(verde, OUTPUT);
+  pinMode(amarillo, OUTPUT);
+  pinMode(naranja, OUTPUT);
+  pinMode(azul, OUTPUT);
+  pinMode(rojo, OUTPUT);
+  pinMode(blanco, OUTPUT);
+
+  pinMode(potenciometro, INPUT);
+}
+
+void loop() {
+
+  // Leer el valor del potenciómetro
+  valorPotenciometro = analogRead(potenciometro);
+
+  // Controlar la velocidad de los LED
+  tiempo = map(valorPotenciometro, 0, 1023, 100, 2000);
+
+  // LED VERDE
+  digitalWrite(verde, HIGH);
+  delay(tiempo);
+  digitalWrite(verde, LOW);
+  delay(tiempo);
+
+  // LED AMARILLO
+  digitalWrite(amarillo, HIGH);
+  delay(tiempo);
+  digitalWrite(amarillo, LOW);
+  delay(tiempo);
+
+  // LED NARANJA
+  digitalWrite(naranja, HIGH);
+  delay(tiempo);
+  digitalWrite(naranja, LOW);
+  delay(tiempo);
+
+  // LED AZUL
+  digitalWrite(azul, HIGH);
+  delay(tiempo);
+  digitalWrite(azul, LOW);
+  delay(tiempo);
+
+  // LED ROJO
+  digitalWrite(rojo, HIGH);
+  delay(tiempo);
+  digitalWrite(rojo, LOW);
+  delay(tiempo);
+
+  // LED BLANCO
+  digitalWrite(blanco, HIGH);
+  delay(tiempo);
+  digitalWrite(blanco, LOW);
+  delay(tiempo);
+}
