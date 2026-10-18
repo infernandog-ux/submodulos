@@ -1,0 +1,35 @@
+// C++ code
+//
+// Semáforo con Arduino Uno R3
+
+int verde = 2;
+int amarillo = 3;
+int rojo = 4;
+
+void setup() {
+  pinMode(verde, OUTPUT);
+  pinMode(amarillo, OUTPUT);
+  pinMode(rojo, OUTPUT);
+}
+
+void loop() {
+
+  // Encender LED verde durante 4 segundos
+  digitalWrite(verde, HIGH);
+  delay(4000);
+  digitalWrite(verde, LOW);
+  delay(1000);
+
+  // Encender LED amarillo durante 1 segundo
+  digitalWrite(amarillo, HIGH);
+  delay(1000);
+  digitalWrite(amarillo, LOW);
+  delay(1000);
+
+  // Encender LED rojo durante 4 segundos
+  digitalWrite(rojo, HIGH);
+  delay(4000);
+  digitalWrite(rojo, LOW);
+  delay(1000);
+
+}
