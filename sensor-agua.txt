@@ -1,0 +1,24 @@
+int sensorAgua = A0;
+int led = 2;
+int valorAgua;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  valorAgua = analogRead(sensorAgua);
+
+  Serial.print("Nivel de agua: ");
+  Serial.println(valorAgua);
+
+  if (valorAgua > 100) {
+    digitalWrite(led, HIGH);
+  }
+  else {
+    digitalWrite(led, LOW);
+  }
+
+  delay(500);
+}
