@@ -1,0 +1,33 @@
+int sensorSonido = 8;
+int led = 13;
+
+int valorSonido;
+int estadoLed = LOW;
+int estadoAnterior = HIGH;
+
+void setup() {
+  pinMode(sensorSonido, INPUT);
+  pinMode(led, OUTPUT);
+
+  digitalWrite(led, LOW);
+}
+
+void loop() {
+  valorSonido = digitalRead(sensorSonido);
+
+  if (valorSonido == LOW && estadoAnterior == HIGH) {
+
+    if (estadoLed == LOW) {
+      estadoLed = HIGH;
+    }
+    else {
+      estadoLed = LOW;
+    }
+
+    digitalWrite(led, estadoLed);
+
+    delay(300);
+  }
+
+  estadoAnterior = valorSonido;
+}
